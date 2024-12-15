@@ -1,0 +1,38 @@
+services:
+  app:
+    init: true
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    environment:
+      - REACT_APP_FIREBASE_EMULATOR_HOST=http://firebase-emulator:4000
+    # depends_on:
+    #   - firebase-emulator
+    working_dir: /app
+    volumes:
+      - .:/app:cached
+    command: [ "pnpm", "dev" ]
+  # firebase-emulator:
+  #   container_name: firebase-emulator
+  #   image: firebase-tools:latest
+  #   ports:
+  #     - "4000:4000"    # Emulator UI
+  #     - "8080:8080"    # Firestore emulator
+  #     - "9000:9000"    # Realtime Database emulator
+  #     - "9099:9099"    # Auth emulator
+  #   volumes:
+  #     - ./firebase:/firebase
+  #     - ./firebase-data:/firebase-data  # Persistent storage
+  #   working_dir: /firebase
+  #   command: >
+  #     firebase emulators:start
+  #     --project demo-project
+  #     --only firestore,auth
+  #     --import /firebase-data
+  #     --export-on-exit /firebase-data
+
+
+networks:
+  default:
+    driver: bridge

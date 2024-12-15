@@ -1,0 +1,43 @@
+{
+  "name": "journey",
+  "description": "A project to reflect my academic and professional journey",
+  "author": {
+    "name": "Vasco Monteiro",
+    "email": "vmnokk@gmail.com"
+  },
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "format:check": "biome format src",
+    "format:fix": "biome format src --write",
+    "lint:check": "biome check src",
+    "lint:fix": "biome check --organize-imports-enabled=true --write src",
+    "lint:fix:all": "biome check --organize-imports-enabled=true --apply-suggested src",
+    "fix": "pnpm run format:fix && pnpm run lint:fix",
+    "ci": "tsc && biome ci src"
+  },
+  "dependencies": {
+    "@ark-ui/solid": "^4.4.0",
+    "@solidjs/router": "^0.15.1",
+    "lucide-solid": "^0.456.0",
+    "solid-i18n": "^1.1.0",
+    "solid-js": "^1.9.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@pandacss/dev": "^0.47.1",
+    "@park-ui/panda-preset": "^0.42.0",
+    "less": "^4.2.0",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10",
+    "vite-plugin-solid": "^2.10.2",
+    "vite-tsconfig-paths": "^5.1.1"
+  },
+  "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee"
+}

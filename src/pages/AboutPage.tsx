@@ -33,9 +33,9 @@ const AboutPage: Component = () => {
     {
       icon: <Volleyball {...ICON_STYLES} />,
       title: 'Hobbies',
-      content: `I'm an anime fan and enjoy playing sports like football, basketball, 
-        badminton, and table tennis; disclaimer: I'm not good at any of them! I also 
-        like playing video games, reading comics and listening to all kinds of music. 
+      content: `I enjoy playing sports like football, basketball, badminton, and table 
+        tennis; disclaimer: I'm not good at any of them! I also like playing video games, 
+        watching anime, reading comics and listening to music. 
         I'm also a coffee and mechanical keyboard enthusiast.`,
     },
     {

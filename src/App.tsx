@@ -5,8 +5,10 @@ import GraduationCap from 'lucide-solid/icons/graduation-cap';
 import UserRound from 'lucide-solid/icons/user-round';
 import type { Component, ParentComponent } from 'solid-js';
 import { Index, createEffect, createSignal } from 'solid-js';
+import { css } from 'styled-system/css';
 import { hstack } from 'styled-system/patterns/hstack';
 import { SegmentGroup } from '~/components/ui/segment-group';
+import { SocialLinks } from './components/SocialLinks';
 
 export const App: ParentComponent = (props) => (
   <>
@@ -28,6 +30,7 @@ const Header: Component = () => {
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: 'var(--colors-bg-default)',
+        position: 'relative',
       })}
     >
       <SegmentGroup.Root
@@ -74,6 +77,24 @@ const Header: Component = () => {
           )}
         </Index>
       </SegmentGroup.Root>
+      <SocialLinks
+        class={css({
+          position: 'absolute',
+          right: 5,
+          '& a.link': {
+            '& svg': {
+              width: '20px',
+              height: '20px',
+              fill: 'var(--colors-accent-7)',
+            },
+
+            '&:hover svg': {
+              fill: 'var(--colors-accent-10)',
+            },
+          },
+        })}
+        gap={5}
+      />
     </header>
   );
 };

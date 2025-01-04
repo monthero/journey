@@ -11,10 +11,10 @@ const AcademicPathPage = lazy(() => import('./pages/AcademicPathPage.tsx'));
 export const AppRouter = () => {
   return (
     <Router root={App}>
-      <Route path="/personal" component={AboutPage} />
+      <Route path="/about" component={AboutPage} />
       <Route path="/professional" component={ProfessionalJourneyPage} />
       <Route path="/academic" component={AcademicPathPage} />
-      <Route path="*paramName" component={() => <Navigate href="/personal" />} />
+      <Route path="*paramName" component={() => <Navigate href="/about" />} />
     </Router>
   );
 };

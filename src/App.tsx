@@ -49,7 +49,6 @@ const Header: Component = () => {
             <SegmentGroup.Item
               value={navItem().to}
               onClick={() => navigate(navItem().to)}
-              accentColor="tomato"
             >
               <SegmentGroup.ItemText
                 color={`var(--colors-grey-${navItem().to === activeSegment() ? '8' : '1'})`}
@@ -101,8 +100,8 @@ const Header: Component = () => {
 
 const navItems = [
   {
-    to: '/personal',
-    label: 'Personal',
+    to: '/about',
+    label: 'About me',
     getIcon: (iconProps: LucideProps) => <UserRound {...iconProps} />,
   },
   {

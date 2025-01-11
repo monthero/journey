@@ -82,13 +82,14 @@ const Header: Component = () => {
           right: 5,
           '& a.link': {
             '& svg': {
+              cursor: 'pointer',
               width: '20px',
               height: '20px',
-              fill: 'var(--colors-accent-7)',
+              stroke: 'var(--colors-accent-8)',
             },
 
             '&:hover svg': {
-              fill: 'var(--colors-accent-10)',
+              stroke: 'var(--colors-accent-10)',
             },
           },
         })}

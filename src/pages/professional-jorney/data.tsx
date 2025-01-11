@@ -16,16 +16,17 @@ export const FIELD_EXPERIENCE_ITEMS: ExperienceItemProps[] = [
     description: (
       <>
         <p>
-          Here I am part of the production and procurement team, focused on building
-          internal services to manage warehouse operations as part of a small, highly
-          skilled team overseeing up to 12 services with diverse responsibilities across
-          the domain.
+          Currently part of the production and procurement team, where I design and
+          develop internal services to streamline warehouse operations. Collaborating
+          with a small, highly skilled team, I help manage up to 12 services and take
+          ownership of two key projects, guiding their direction to align with business
+          objectives and the team's technical goals.
         </p>
         <p>
-          Develop end-to-end solutions to address user challenges, ensuring seamless
-          integration of backend and frontend systems, utilizing Python-based backends
-          (primarily Django and FastAPI) alongside React UIs to create efficient,
-          user-focused applications.
+          I create end-to-end solutions by integrating Python-based backends (Django,
+          FastAPI) with React UIs, delivering efficient and user-focused applications. I
+          also mentor teammates, fostering collaboration and skill development within
+          the team.
         </p>
       </>
     ),
@@ -34,10 +35,10 @@ export const FIELD_EXPERIENCE_ITEMS: ExperienceItemProps[] = [
       'Django',
       'FastAPI',
       'PostgresSQL',
-      'Docker',
-      'GCP',
       'TypeScript',
       'React',
+      'Docker',
+      'GCP',
     ],
   },
   {

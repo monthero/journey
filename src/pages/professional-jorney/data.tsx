@@ -190,17 +190,12 @@ export const SOFT_SKILLS: {
             taught me a lot about communication and getting people, with different skill
             sets, to work together toward a shared goal.
           </p>
-          <p>
-            These experiences helped me develop skills in organization, mentoring, and
-            leadership that I still rely on today in all kinds of situations.
-          </p>
         </>
       ),
     },
   ],
-  outro: `All these experiences led me to practice and develop my communication,
-    mentoring, organization, and leadership skills, which I bring to every professional
-    challenge.`,
+  outro: `These experiences helped me develop skills in organization, mentoring, and
+            leadership that I still rely on today in all kinds of situations.`,
 } as const;
 
 export const OTHER_EXPERIENCES: string[] = [

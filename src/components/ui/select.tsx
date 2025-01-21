@@ -2,6 +2,8 @@ import { IconCheck, IconChevronDown } from '@tabler/icons-solidjs';
 import { type Component, Index, type JSX } from 'solid-js';
 import * as ParkUISelect from './styled/select';
 
+export type SelectProps = ParkUISelect.RootProps;
+
 export const Select: Component<
   ParkUISelect.RootProps & {
     label: JSX.Element;

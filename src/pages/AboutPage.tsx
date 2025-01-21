@@ -6,53 +6,32 @@ import {
   IconMountainFilled,
   IconPingPong,
 } from '@tabler/icons-solidjs';
-import { type Component, For } from 'solid-js';
+import { type Component, For, type JSX } from 'solid-js';
 import { Grid } from 'styled-system/jsx/grid';
 import { GridItem } from 'styled-system/jsx/grid-item';
 import { HStack } from 'styled-system/jsx/hstack';
 import { VStack } from 'styled-system/jsx/vstack';
 import avatarImg from '~/assets/avatar.png';
 import { Text } from '~/components/ui/text';
-import { Tooltip } from '~/components/ui/tooltip';
+import { useLocale } from '~/locales';
 
 const AboutPage: Component = () => {
-  const aboutItems = [
-    {
-      icon: <IconMoodWink {...ICON_STYLES} />,
-      title: 'About Me',
-      content: `Hey there! I'm Vasco Monteiro, a software engineer from Portugal, currently 
-        settled in the Netherlands. I enjoy working through technical challenges and 
-        am always up for opportunities to learn and develop my skills further.
-        I'm passionate about coding and love exploring and trying out new things.`,
-    },
-    {
-      icon: <IconMountainFilled {...ICON_STYLES} />,
-      title: 'Interests',
-      content: `Outside of work, I'm at my happiest exploring the outdoors, hiking in 
-      the mountains or getting lost in nature. Absolutely love traveling and trying new and 
-      tasty foods and learning about new cultures.`,
-    },
-    {
-      icon: <IconPingPong {...ICON_STYLES} />,
-      title: 'Hobbies',
-      content: `I enjoy playing sports like football, basketball, badminton, and table 
-        tennis; disclaimer: I'm not good at any of them! I also like playing video games, 
-        watching anime, reading comics and listening to music. 
-        I'm also a coffee and mechanical keyboard enthusiast.`,
-    },
-    {
-      icon: <IconHomeHeart {...ICON_STYLES} />,
-      title: 'Home Life',
-      content: `When at home, my wife and our cuddly tabby cat are always ready for some cozy and 
-        fun times.`,
-    },
-    {
-      icon: <IconChartHistogram {...ICON_STYLES} />,
-      title: 'Soft Skills',
-      content: (
+  const { t } = useLocale();
+
+  const getSectionContent = (
+    code: 'about' | 'interests' | 'hobbies' | 'homeLife' | 'softSkills' | 'languages'
+  ): string | JSX.Element => {
+    if (['about', 'interests', 'hobbies', 'homeLife'].includes(code)) {
+      return t(
+        `aboutItems.${code as 'about' | 'interests' | 'hobbies' | 'homeLife'}.text`
+      ) as string;
+    }
+
+    if (code === 'softSkills') {
+      return (
         <VStack gap={1} alignItems="flex-start">
           <For each={softSkills}>
-            {(item) => (
+            {(_item, index) => (
               <HStack alignItems="center" justifyContent="flex-start" width="100%">
                 <Text
                   as="span"
@@ -62,20 +41,19 @@ const AboutPage: Component = () => {
                 >
                   -
                 </Text>
-                <Text>{item}</Text>
+                <Text>{t(`aboutItems.softSkills.values.${index()}`)}</Text>
               </HStack>
             )}
           </For>
         </VStack>
-      ),
-    },
-    {
-      icon: <IconLanguage {...ICON_STYLES} />,
-      title: 'Languages',
-      content: (
+      );
+    }
+
+    if (code === 'languages') {
+      return (
         <VStack gap={1} alignItems="flex-start">
           <For each={languages}>
-            {({ language, level }) => (
+            {(item) => (
               <HStack width="100%" alignItems="center" justifyContent="flex-start">
                 <Text
                   as="span"
@@ -85,7 +63,7 @@ const AboutPage: Component = () => {
                 >
                   -
                 </Text>
-                <Text>{language}</Text>
+                <Text>{t(`aboutItems.languages.items.${item}.name`)}</Text>
                 <Text
                   as="span"
                   color="var(--colors-accent-text)"
@@ -93,15 +71,17 @@ const AboutPage: Component = () => {
                   flex="1 1 auto"
                   fontSize="0.8em"
                 >
-                  ({level})
+                  ({t(`aboutItems.languages.items.${item}.level`)})
                 </Text>
               </HStack>
             )}
           </For>
         </VStack>
-      ),
-    },
-  ] as const;
+      );
+    }
+
+    return '';
+  };
 
   return (
     <>
@@ -140,18 +120,23 @@ const AboutPage: Component = () => {
             textTransform="uppercase"
             color="var(--colors-accent-text)"
           >
-            Software Engineer
+            {t('role')}
           </Text>
         </VStack>
         <img src={avatarImg} alt="me and mochi" width={420} />
       </HStack>
       <Grid padding="5vh 15vw 10vh 15vw" columns={3} gap={10}>
         <For each={aboutItems}>
-          {({ icon, title, content }) => (
+          {({ code, icon }) => (
             <GridItem>
-              <Tooltip title={title}>{icon}</Tooltip>
-              <Text as="p" textAlign="justify" marginTop={2} wordBreak="break-word">
-                {content}
+              <HStack gap={2} alignItems="center">
+                {icon}
+                <Text as="span" fontWeight="bold">
+                  {t(`aboutItems.${code}.title`)}
+                </Text>
+              </HStack>
+              <Text as="p" marginTop={2} wordBreak="break-word">
+                {getSectionContent(code)}
               </Text>
             </GridItem>
           )}
@@ -163,6 +148,16 @@ const AboutPage: Component = () => {
 
 export default AboutPage;
 
+const ICON_STYLES = { size: 30, color: 'var(--colors-accent-9)' } as const;
+const aboutItems = [
+  { code: 'about', icon: <IconMoodWink {...ICON_STYLES} /> },
+  { code: 'interests', icon: <IconMountainFilled {...ICON_STYLES} /> },
+  { code: 'hobbies', icon: <IconPingPong {...ICON_STYLES} /> },
+  { code: 'homeLife', icon: <IconHomeHeart {...ICON_STYLES} /> },
+  { code: 'softSkills', icon: <IconChartHistogram {...ICON_STYLES} /> },
+  { code: 'languages', icon: <IconLanguage {...ICON_STYLES} /> },
+] as const;
+
 const softSkills: string[] = [
   'Solution-oriented',
   'Collaboration',
@@ -173,14 +168,4 @@ const softSkills: string[] = [
   'Supportive mentorship',
 ] as const;
 
-const languages: { language: string; level: string }[] = [
-  { language: 'Portuguese', level: 'Native' },
-  { language: 'English', level: 'Fluent + Working Proficiency' },
-  { language: 'Spanish', level: 'Fluent' },
-  { language: 'French', level: 'Conversational' },
-  { language: 'Indonesian', level: 'Conversational' },
-  { language: 'Dutch', level: 'Basic' },
-  { language: 'Japanese', level: 'Basic' },
-] as const;
-
-const ICON_STYLES = { size: 30, color: 'var(--colors-accent-9)' } as const;
+const languages = ['pt', 'en', 'es', 'fr', 'id', 'nl', 'jp'] as const;

@@ -1,7 +1,5 @@
-import CalendarRangeIcon from 'lucide-solid/icons/calendar-range';
-import MapPinHouseIcon from 'lucide-solid/icons/map-pin-house';
-import { type Component, For } from 'solid-js';
-import type { JSX } from 'solid-js/jsx-runtime';
+import { IconCalendarWeekFilled, IconWorldPin } from '@tabler/icons-solidjs';
+import { type Component, For, type JSX } from 'solid-js';
 import { Divider } from 'styled-system/jsx/divider';
 import { HStack } from 'styled-system/jsx/hstack';
 import { VStack } from 'styled-system/jsx/vstack';
@@ -51,13 +49,13 @@ export const ExperienceItem: Component<
       <HStack alignItems="center">
         {location && (
           <>
-            <MapPinHouseIcon size={14} />
+            <IconWorldPin size={14} />
             <Text as="p" fontSize="0.8em" lineHeight="1" color="var(--colors-accent-8)">
               {location}
             </Text>
           </>
         )}
-        <CalendarRangeIcon size={14} />
+        <IconCalendarWeekFilled size={14} />
         <Text as="p" fontSize="0.7em" color="var(--colors-accent-8)">
           {startDate} → {endDate ?? 'Today'}
         </Text>

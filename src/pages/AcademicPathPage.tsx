@@ -1,4 +1,4 @@
-import MapPin from 'lucide-solid/icons/map-pin';
+import { IconWorldPin } from '@tabler/icons-solidjs';
 import type { Component } from 'solid-js';
 import { Divider } from 'styled-system/jsx/divider';
 import { VStack } from 'styled-system/jsx/vstack';
@@ -71,7 +71,7 @@ const AcademicPathPage: Component = () => {
                 <Link href="https://www.uminho.pt" target="_blank">
                   University of Minho
                 </Link>
-                <MapPin size={14} color="var(--colors-accent-text)" />
+                <IconWorldPin size={14} color="var(--colors-accent-text)" />
                 <Text>Braga, Portugal</Text>
               </Table.Cell>
               <Table.Cell>2007 - 2017</Table.Cell>

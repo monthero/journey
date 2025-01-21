@@ -1,9 +1,11 @@
-import Cat from 'lucide-solid/icons/cat';
-import MessageCircleHeart from 'lucide-solid/icons/message-circle-heart';
-import MessagesSquare from 'lucide-solid/icons/messages-square';
-import NotepadText from 'lucide-solid/icons/notepad-text';
-import UserRoundPen from 'lucide-solid/icons/user-round-pen';
-import Volleyball from 'lucide-solid/icons/volleyball';
+import {
+  IconChartHistogram,
+  IconHomeHeart,
+  IconLanguage,
+  IconMoodWink,
+  IconMountainFilled,
+  IconPingPong,
+} from '@tabler/icons-solidjs';
 import { type Component, For } from 'solid-js';
 import { Grid } from 'styled-system/jsx/grid';
 import { GridItem } from 'styled-system/jsx/grid-item';
@@ -16,7 +18,7 @@ import { Tooltip } from '~/components/ui/tooltip';
 const AboutPage: Component = () => {
   const aboutItems = [
     {
-      icon: <UserRoundPen {...ICON_STYLES} />,
+      icon: <IconMoodWink {...ICON_STYLES} />,
       title: 'About Me',
       content: `Hey there! I'm Vasco Monteiro, a software engineer from Portugal, currently 
         settled in the Netherlands. I enjoy working through technical challenges and 
@@ -24,14 +26,14 @@ const AboutPage: Component = () => {
         I'm passionate about coding and love exploring and trying out new things.`,
     },
     {
-      icon: <MessageCircleHeart {...ICON_STYLES} />,
+      icon: <IconMountainFilled {...ICON_STYLES} />,
       title: 'Interests',
       content: `Outside of work, I'm at my happiest exploring the outdoors, hiking in 
       the mountains or getting lost in nature. Absolutely love traveling and trying new and 
       tasty foods and learning about new cultures.`,
     },
     {
-      icon: <Volleyball {...ICON_STYLES} />,
+      icon: <IconPingPong {...ICON_STYLES} />,
       title: 'Hobbies',
       content: `I enjoy playing sports like football, basketball, badminton, and table 
         tennis; disclaimer: I'm not good at any of them! I also like playing video games, 
@@ -39,13 +41,13 @@ const AboutPage: Component = () => {
         I'm also a coffee and mechanical keyboard enthusiast.`,
     },
     {
-      icon: <Cat {...ICON_STYLES} />,
+      icon: <IconHomeHeart {...ICON_STYLES} />,
       title: 'Home Life',
       content: `When at home, my wife and our cuddly tabby cat are always ready for some cozy and 
         fun times.`,
     },
     {
-      icon: <NotepadText {...ICON_STYLES} />,
+      icon: <IconChartHistogram {...ICON_STYLES} />,
       title: 'Soft Skills',
       content: (
         <VStack gap={1} alignItems="flex-start">
@@ -68,7 +70,7 @@ const AboutPage: Component = () => {
       ),
     },
     {
-      icon: <MessagesSquare {...ICON_STYLES} />,
+      icon: <IconLanguage {...ICON_STYLES} />,
       title: 'Languages',
       content: (
         <VStack gap={1} alignItems="flex-start">

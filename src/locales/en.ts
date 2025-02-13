@@ -206,4 +206,67 @@ export const en = {
     outro: `These experiences helped me develop skills in organization, mentoring, and
       communication, and I continue to draw on them in my professional life.`,
   },
+  studies: {
+    timeline: 'Timeline',
+    university: {
+      title: 'University',
+      name: 'University of Minho',
+      location: 'Braga, Portugal',
+    },
+    bachelors: {
+      title: "Bachelor's Degree",
+      value: 'Software Engineering',
+    },
+    masters: {
+      title: "Master's Degree",
+      value: 'Intelligent Systems and Computer Graphics',
+    },
+    sections: [
+      {
+        title: 'Thesis',
+        subtitle: 'Applying Gamification to e-Government',
+        description: `Developed a geolocation mobile game enabling direct citizen-to-city
+         hall communication. Citizens could report urban issues through gameplay focused
+          on the city’s points of interest.`,
+      },
+      {
+        title: 'Group Project',
+        subtitle: 'Aphelion',
+        description: `Designed an augmented reality multiplayer mobile shooter. My 
+        responsibilities included leading the team, managing database design and 
+        administration, implementing backend and frontend systems, and conceptualizing 
+        gameplay, lore, and design. These efforts culminated in an immersive and 
+        competitive gaming experience that blended strategic and real-time augmented 
+        reality elements.`,
+      },
+      {
+        title: "Master's project",
+        subtitle: 'Smart Walker',
+        description: `Participated in the creation of a support system for a smart 
+        walker to assist patients with mobility impairments. This project was a 
+        collaboration between the university and Braga’s hospital.`,
+      },
+    ],
+    outro: {
+      title: 'Finding my way',
+      paragraphs: [
+        `When I first started university, I wasn’t entirely sure what I wanted to do 
+        professionally. Coming from a more arts-focused background in high school, I 
+        initially felt unmotivated and out of my depth in the course I had chosen. During 
+        this time, I took on part-time jobs, exploring different fields and gaining real-world
+         experience, but nothing truly clicked.`,
+        `That changed when I decided to build a website to modernize my parents' business's
+         online presence. It was my first hands-on project in web development, and it 
+         opened my eyes to the connections between what I was learning in my studies and 
+         the creative, technical work I loved doing.`,
+        `From that moment, my motivation transformed, and I completed my degree with a 
+        renewed sense of purpose. That experience marked the start of my journey into 
+        technology and design, which has since become my passion and career.`,
+        `My academic journey spanned several years, during which I explored diverse 
+        interests and gained practical experience. While the timeline was unconventional, 
+        it allowed me to discover my passion for web development, and from that point 
+        onward, I pursued my studies with clarity and purpose.`,
+      ],
+    },
+  },
 };

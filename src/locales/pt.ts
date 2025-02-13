@@ -203,4 +203,67 @@ export const pt = {
     outro: `Estas experiências ajudaram-me a desenvolver competências em organização, mentoria e 
       comunicação, e continuo a recorrer a elas na minha vida profissional.`,
   },
+  studies: {
+    timeline: 'Cronologia',
+    university: {
+      title: 'Localização',
+      name: 'Universidade do Minho',
+      location: 'Braga, Portugal',
+    },
+    bachelors: {
+      title: 'Licenciatura',
+      value: 'Engenharia de Software',
+    },
+    masters: {
+      title: 'Mestrado',
+      value: 'Sistemas Inteligentes e Computação Gráfica',
+    },
+    sections: [
+      {
+        title: 'Tese',
+        subtitle: 'Aplicação de Gamificação ao e-Government',
+        description: `Desenvolvi um jogo móvel de geolocalização que permitia a comunicação 
+        direta entre cidadãos e a câmara municipal. Os cidadãos podiam reportar problemas 
+        urbanos através de uma jogabilidade focada nos pontos de interesse da cidade.`,
+      },
+      {
+        title: 'Projeto de Grupo',
+        subtitle: 'Aphelion',
+        description: `Projetei um jogo de tiro multijogador em realidade aumentada para 
+        dispositivos móveis. As minhas responsabilidades incluíam liderar a equipa, gerir o 
+        design e administração da base de dados, implementar sistemas de backend e frontend, 
+        e conceptualizar a jogabilidade, história e design. Estes esforços resultaram numa 
+        experiência de jogo imersiva e competitiva que combinava elementos estratégicos e 
+        de realidade aumentada em tempo real.`,
+      },
+      {
+        title: 'Projeto de Mestrado',
+        subtitle: 'Smart Walker',
+        description: `Participei na criação de um sistema de suporte para um andarilho 
+        inteligente destinado a ajudar pacientes com dificuldades de mobilidade. Este projeto 
+        foi uma colaboração entre a universidade e o hospital de Braga.`,
+      },
+    ],
+    outro: {
+      title: 'Encontrar o meu caminho',
+      paragraphs: [
+        `Quando comecei a universidade, não tinha a certeza absoluta do que queria fazer 
+      profissionalmente. Vindo de um background mais focado em artes no ensino secundário, 
+      senti-me inicialmente desmotivado e fora da minha zona de conforto no curso que escolhi. 
+      Durante este período, tive empregos a tempo parcial, explorando diferentes áreas e 
+      ganhando experiência no mundo real, mas nada realmente me cativou.`,
+        `Isso mudou quando decidi construir um site para modernizar a presença online do negócio 
+      dos meus pais. Foi o meu primeiro projeto prático em desenvolvimento web, e abriu-me os 
+      olhos para as conexões entre o que estava a aprender nos estudos e o trabalho criativo 
+      e técnico que adorava fazer.`,
+        `A partir desse momento, a minha motivação transformou-se, e completei o meu curso com 
+      um renovado sentido de propósito. Essa experiência marcou o início da minha jornada na 
+      tecnologia e design, que desde então se tornou a minha paixão e carreira.`,
+        `A minha jornada académica durou vários anos, durante os quais explorei diversos 
+      interesses e ganhei experiência prática. Embora a cronologia tenha sido pouco 
+      convencional, permitiu-me descobrir a minha paixão pelo desenvolvimento web, e a partir 
+      desse ponto, prossegui os meus estudos com clareza e propósito.`,
+      ],
+    },
+  },
 };

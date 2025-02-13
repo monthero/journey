@@ -1,33 +1,25 @@
 import { IconCalendarWeekFilled, IconWorldPin } from '@tabler/icons-solidjs';
-import { type Component, For, type JSX } from 'solid-js';
+import { type Component, For } from 'solid-js';
 import { Divider } from 'styled-system/jsx/divider';
 import { HStack } from 'styled-system/jsx/hstack';
 import { VStack } from 'styled-system/jsx/vstack';
 import { Heading } from '~/components/ui/heading';
+import { Link } from '~/components/ui/link';
 import { Text } from '~/components/ui/text';
+import { type RawLocaleDictionary, useLocale } from '~/locales';
 
 export type ExperienceItemProps = {
-  position: string;
-  company: JSX.Element | string;
-  location?: string;
-  startDate: string;
-  endDate?: string;
-  description: JSX.Element | string;
+  contentKey: keyof RawLocaleDictionary['workXP'];
+  companyName?: string;
+  companyUrl?: string;
   keyTechnology: string[];
 };
 
 export const ExperienceItem: Component<
   ExperienceItemProps & { useDivider: boolean }
-> = ({
-  position,
-  company,
-  location,
-  startDate,
-  endDate,
-  description,
-  keyTechnology,
-  useDivider,
-}) => {
+> = ({ contentKey, companyName, companyUrl, keyTechnology, useDivider }) => {
+  const { t } = useLocale();
+
   return (
     <VStack gap={3} alignItems="flex-start">
       <HStack gap={2} alignItems="baseline">
@@ -37,27 +29,34 @@ export const ExperienceItem: Component<
           color="var(--colors-accent-text)"
           lineHeight="1"
         >
-          {position}
+          {t(`workXP.${contentKey}.role`)}
         </Heading>
-        <Text as="p" fontSize="0.9em" lineHeight="0.9" color="var(--colors-sage-10)">
-          {company === 'Freelancer' ? 'as' : 'at'}
-        </Text>
-        <Text as="p" fontSize="1.1em" lineHeight="1">
-          {company}
-        </Text>
-      </HStack>
-      <HStack alignItems="center">
-        {location && (
+        {companyName != null && (
           <>
-            <IconWorldPin size={14} />
-            <Text as="p" fontSize="0.8em" lineHeight="1" color="var(--colors-accent-8)">
-              {location}
+            <Text
+              as="p"
+              fontSize="0.9em"
+              lineHeight="0.9"
+              color="var(--colors-sage-10)"
+            >
+              @
+            </Text>
+            <Text as="p" fontSize="1.1em" lineHeight="1">
+              <Link href={companyUrl} target="_blank">
+                {companyName}
+              </Link>
             </Text>
           </>
         )}
-        <IconCalendarWeekFilled size={14} />
+      </HStack>
+      <HStack alignItems="center">
+        <IconWorldPin size={14} color="var(--colors-accent-10)" />
+        <Text as="p" fontSize="0.8em" lineHeight="1" color="var(--colors-accent-8)">
+          {t(`workXP.${contentKey}.location`)}
+        </Text>
+        <IconCalendarWeekFilled size={14} color="var(--colors-accent-10)" />
         <Text as="p" fontSize="0.7em" color="var(--colors-accent-8)">
-          {startDate} → {endDate ?? 'Today'}
+          {t(`workXP.${contentKey}.startDate`)} → {t(`workXP.${contentKey}.endDate`)}
         </Text>
       </HStack>
       <VStack
@@ -69,7 +68,27 @@ export const ExperienceItem: Component<
         color="var(--colors-sage-11)"
         lineHeight={1.75}
       >
-        {description}
+        <For each={t(`workXP.${contentKey}.description`) ?? []}>
+          {(paragraph) => <Text as="p">{paragraph}</Text>}
+        </For>
+        <For each={t(`workXP.${contentKey}.highlights`) ?? []}>
+          {({ title, description }) => (
+            <VStack gap={1} alignItems="flex-start">
+              <Text
+                as="p"
+                fontSize="1em"
+                fontWeight="bold"
+                lineHeight={1.5}
+                color="var(--colors-accent-text)"
+              >
+                {title}
+              </Text>
+              <Text as="p" fontSize="0.9em" lineHeight={1.5}>
+                {description}
+              </Text>
+            </VStack>
+          )}
+        </For>
       </VStack>
       <HStack
         gap={1}

@@ -4,10 +4,12 @@ import { vstack } from 'styled-system/patterns';
 import { Heading } from '~/components/ui/heading';
 import { Tabs } from '~/components/ui/tabs';
 import { Text } from '~/components/ui/text';
+import { useLocale } from '~/locales';
 import { ExperienceItem } from './ExperienceItem';
 import { FIELD_EXPERIENCE_ITEMS, OTHER_EXPERIENCES, SOFT_SKILLS } from './data';
 
 const ProfessionalJourneyPage: Component = () => {
+  const { t } = useLocale();
   const options = [
     { key: 'field-experience', label: 'Field Experience' },
     { key: 'other-experience', label: 'Other Experience' },
@@ -31,7 +33,7 @@ const ProfessionalJourneyPage: Component = () => {
         textAlign="center"
         color="var(--colors-accent-10)"
       >
-        Professional Journey
+        {t('pageTitles.workExperience')}
       </Heading>
       <Tabs.Root defaultValue={'field-experience'} variant="outline">
         <Tabs.List>

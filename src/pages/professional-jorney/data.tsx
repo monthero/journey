@@ -1,35 +1,11 @@
 import type { JSX } from 'solid-js';
-import { Link } from '~/components/ui/link';
 import type { ExperienceItemProps } from './ExperienceItem';
 
 export const FIELD_EXPERIENCE_ITEMS: ExperienceItemProps[] = [
   {
-    position: 'Software Engineer',
-    company: (
-      <Link href="https://www.bloomandwild.com/" target="_blank">
-        Bloom & Wild Group
-      </Link>
-    ),
-    location: 'Amsterdam, Netherlands',
-    startDate: 'September 2021',
-    endDate: undefined,
-    description: (
-      <>
-        <p>
-          Currently part of the production and procurement team, where I design and
-          develop internal services to streamline warehouse operations. Collaborating
-          with a small, highly skilled team, I help manage up to 12 services and take
-          ownership of two key projects, guiding their direction to align with business
-          objectives and the team's technical goals.
-        </p>
-        <p>
-          I create end-to-end solutions by integrating Python-based backends (Django,
-          FastAPI) with React UIs, delivering efficient and user-focused applications. I
-          also mentor teammates, fostering collaboration and skill development within
-          the team.
-        </p>
-      </>
-    ),
+    contentKey: 'bloomon',
+    companyName: 'Bloomon (Bloom & Wild Group)',
+    companyUrl: 'https://www.bloomon.nl/',
     keyTechnology: [
       'Python',
       'Django',
@@ -42,38 +18,9 @@ export const FIELD_EXPERIENCE_ITEMS: ExperienceItemProps[] = [
     ],
   },
   {
-    position: 'Back End Developer',
-    company: (
-      <Link href="https://www.monks.com/" target="_blank">
-        Media.Monks
-      </Link>
-    ),
-    location: 'Hilversum, Netherlands',
-    startDate: 'January 2020',
-    endDate: 'September 2021',
-    description: (
-      <>
-        <p>
-          Focused exclusively on backend development using Python, working on a variety
-          of projects ranging from small-scale initiatives to highly complex systems.
-          Primarily utilized Django and Flask, with some contributions in FastAPI. Key
-          projects included:
-        </p>
-        <ul>
-          <li>
-            <strong>Tokyo Olympics Broadcasting Platform</strong>: Contributed to video
-            thumbnail generation, mobile push notification logic, and other supporting
-            features.
-          </li>
-          <li>
-            <strong>Google Landing Page Generator</strong>: Developed a tool to
-            dynamically generate landing pages for showcasing Google’s products,
-            adhering to their styling guides and integrating with their internal CMS for
-            content management.
-          </li>
-        </ul>
-      </>
-    ),
+    contentKey: 'mediaMonks',
+    companyName: 'MediaMonks',
+    companyUrl: 'https://www.mediamonks.com/',
     keyTechnology: [
       'Python',
       'Django',
@@ -90,21 +37,9 @@ export const FIELD_EXPERIENCE_ITEMS: ExperienceItemProps[] = [
     ],
   },
   {
-    position: 'Full-stack Developer',
-    company: (
-      <Link href="https://www.eurotrol.com" target="_blank">
-        Eurotrol
-      </Link>
-    ),
-    location: 'Ede, Netherlands',
-    startDate: 'March 2018',
-    endDate: 'December 2019',
-    description: `Worked primarily with Django and jQuery to develop the new company 
-      website, including a webshop integrated with Stripe for payment processing. 
-      This platform also laid the groundwork for a digital solution enabling clinics, 
-      hospitals, and laboratories to share and manage results using the company's 
-      products, modernizing quality control processes and expanding their global reach.
-    `,
+    contentKey: 'eurotrol',
+    companyName: 'Eurotrol B.V.',
+    companyUrl: 'https://www.eurotrol.com/',
     keyTechnology: [
       'Python',
       'Django',
@@ -117,41 +52,8 @@ export const FIELD_EXPERIENCE_ITEMS: ExperienceItemProps[] = [
     ],
   },
   {
-    position: 'Full-stack Developer',
-    company: 'Freelancer',
-    location: 'Porto, Portugal',
-    startDate: '2011',
-    endDate: 'March 2018',
+    contentKey: 'freelancer',
     keyTechnology: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'jQuery'],
-    description: (
-      <>
-        <p>
-          Worked on a variety of projects for small businesses, delivering tailored web
-          solutions to meet their unique needs, including:
-        </p>
-        <p>
-          A web app with a management control area for a local gym. The app not only
-          listed available services and classes but also allowed trainers to customize
-          the variety of classes scheduled throughout the month. Additionally, it
-          enabled them to monitor which users signed up for each class.
-        </p>
-        <p>
-          Developed several product catalog-style websites for a construction company, a
-          furniture business, an electrical appliance company, and a few others. While
-          most of these projects are no longer online due to their age, one exception is
-          the website for{' '}
-          <Link href="https://ibercell.com" target="_blank">
-            Ibercell
-          </Link>
-          , a company specializing in batteries, CDs, DVDs, and other consumables.
-        </p>
-        <p>
-          This work provided me with early experience in end-to-end project development,
-          from gathering requirements to deploying and maintaining functional,
-          user-friendly websites.
-        </p>
-      </>
-    ),
   },
 ] as const;
 

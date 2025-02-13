@@ -7,8 +7,11 @@ import { Heading } from '~/components/ui/heading';
 import { Link } from '~/components/ui/link';
 import { Table } from '~/components/ui/table';
 import { Text } from '~/components/ui/text';
+import { useLocale } from '~/locales';
 
 const AcademicPathPage: Component = () => {
+  const { t } = useLocale();
+
   return (
     <VStack
       gap={4}

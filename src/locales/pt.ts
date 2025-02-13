@@ -7,6 +7,11 @@ export const pt = {
     },
   },
   role: 'Engenheiro de Software',
+  pageTitles: {
+    about: 'Sobre mim',
+    workExperience: 'Experiência Profissional',
+    studies: 'Percurso Académico',
+  },
   aboutItems: {
     about: {
       title: 'Sobre mim',
@@ -148,5 +153,54 @@ export const pt = {
       ],
       highlights: [],
     },
+  },
+  otherXP: [
+    `Antes de começar a trabalhar como engenheiro de software, tive alguns empregos 
+    a tempo parcial em cafés, bares, restaurantes e num cinema. Lidei com tarefas como 
+    atender clientes, preparar pedidos e gerir vendas de bilhetes, ganhando experiência 
+    prática em ambientes de ritmo acelerado.`,
+    `Embora estes empregos fossem menos complexos do que o meu trabalho atual, ensinaram-me 
+    competências valiosas que ainda utilizo hoje. Desenvolvi um forte sentido de 
+    responsabilidade, aprendi a coordenar eficazmente com colegas e aperfeiçoei as minhas 
+    capacidades de organização e gestão de tempo.`,
+    `Estas experiências moldaram a minha abordagem ao trabalho em equipa e prepararam-me 
+    para lidar com responsabilidades mais complexas na minha carreira profissional.`,
+  ],
+  softSkills: {
+    intro: `Competências interpessoais como comunicação, trabalho em equipa e resolução de 
+      problemas são tão importantes como as competências técnicas, e as minhas experiências 
+      em desportos e e-sports foram fundamentais para moldar estas capacidades.`,
+    sections: [
+      {
+        title: 'Desportos',
+        description: [
+          `Durante mais de 15 anos, joguei futebol, futsal e basquetebol, em certos momentos 
+          ao mesmo tempo, onde desenvolvi fortes competências de trabalho em equipa e 
+          comunicação, colaborando com colegas, compreendendo papéis e alcançando objetivos 
+          comuns em ambientes de alta pressão.`,
+        ],
+      },
+      {
+        title: 'E-Sports',
+        description: [
+          `
+          Além dos desportos tradicionais, também passei vários anos a jogar videojogos 
+          de forma competitiva, o que acabou por ser uma excelente forma de aprender sobre 
+          trabalho em equipa e liderança. Como líder de uma equipa competitiva de 
+          Counter-Strike durante mais de sete anos, lidava com tarefas como arranjar 
+          patrocínios, desenvolver estratégias para jogos de alta pressão e orientar um 
+          grupo de cinco a seis adolescentes. Era um ambiente de ritmo acelerado, e manter 
+          todos na mesma página era desafiante e recompensador.
+        `,
+          `Também liderei uma guilda internacional de 25 membros no World of Warcraft durante 
+          alguns anos. Isto envolvia coordenar papéis, planear táticas e incentivar a 
+          cooperação para enfrentar alguns desafios de grupo bastante complexos. Ensinou-me 
+          muito sobre comunicação e fazer com que pessoas, com diferentes conjuntos de 
+          competências, trabalhassem juntas para um objetivo comum.`,
+        ],
+      },
+    ],
+    outro: `Estas experiências ajudaram-me a desenvolver competências em organização, mentoria e 
+      comunicação, e continuo a recorrer a elas na minha vida profissional.`,
   },
 };

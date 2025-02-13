@@ -5,8 +5,7 @@ import { Heading } from '~/components/ui/heading';
 import { Tabs } from '~/components/ui/tabs';
 import { Text } from '~/components/ui/text';
 import { useLocale } from '~/locales';
-import { ExperienceItem } from './ExperienceItem';
-import { FIELD_EXPERIENCE_ITEMS, OTHER_EXPERIENCES, SOFT_SKILLS } from './data';
+import { ExperienceItem, type ExperienceItemProps } from './ExperienceItem';
 
 const ProfessionalJourneyPage: Component = () => {
   const { t } = useLocale();
@@ -53,7 +52,7 @@ const ProfessionalJourneyPage: Component = () => {
           </For>
         </TabContent>
         <TabContent value="other-experience">
-          <For each={OTHER_EXPERIENCES}>
+          <For each={t('otherXP') ?? []}>
             {(experience) => (
               <Text as="p" lineHeight={1.75} textAlign="justify">
                 {experience}
@@ -63,10 +62,10 @@ const ProfessionalJourneyPage: Component = () => {
         </TabContent>
         <TabContent value="soft-skills-building">
           <Text as="p" textAlign="justify">
-            {SOFT_SKILLS.intro}
+            {t('softSkills.intro')}
           </Text>
-          <For each={SOFT_SKILLS.sections}>
-            {(section) => (
+          <For each={t('softSkills.sections') ?? []}>
+            {({ title, description }) => (
               <VStack gap={3} alignItems="flex-start">
                 <Heading
                   as="h3"
@@ -74,16 +73,20 @@ const ProfessionalJourneyPage: Component = () => {
                   color="var(--colors-accent-text)"
                   lineHeight="1"
                 >
-                  {section.title}
+                  {title}
                 </Heading>
-                <Text as="p" textAlign="justify">
-                  {section.description}
-                </Text>
+                <For each={description}>
+                  {(paragraph) => (
+                    <Text as="p" textAlign="justify">
+                      {paragraph}
+                    </Text>
+                  )}
+                </For>
               </VStack>
             )}
           </For>
           <Text as="p" textAlign="justify">
-            {SOFT_SKILLS.outro}
+            {t('softSkills.outro')}
           </Text>
         </TabContent>
       </Tabs.Root>
@@ -109,3 +112,59 @@ const TabContent: ParentComponent<{ value: string }> = ({ value, children }) => 
     </Tabs.Content>
   );
 };
+
+const FIELD_EXPERIENCE_ITEMS: ExperienceItemProps[] = [
+  {
+    contentKey: 'bloomon',
+    companyName: 'Bloomon (Bloom & Wild Group)',
+    companyUrl: 'https://www.bloomon.nl/',
+    keyTechnology: [
+      'Python',
+      'Django',
+      'FastAPI',
+      'PostgresSQL',
+      'TypeScript',
+      'React',
+      'Docker',
+      'GCP',
+    ],
+  },
+  {
+    contentKey: 'mediaMonks',
+    companyName: 'MediaMonks',
+    companyUrl: 'https://www.mediamonks.com/',
+    keyTechnology: [
+      'Python',
+      'Django',
+      'Flask',
+      'FastAPI',
+      'PostgresSQL',
+      'GCP',
+      'Firebase',
+      'Docker',
+      'ffmpeg',
+      'RabbitMQ',
+      'Kafka',
+      'Redis',
+    ],
+  },
+  {
+    contentKey: 'eurotrol',
+    companyName: 'Eurotrol B.V.',
+    companyUrl: 'https://www.eurotrol.com/',
+    keyTechnology: [
+      'Python',
+      'Django',
+      'PostgresSQL',
+      'HTML',
+      'CSS',
+      'Javascript',
+      'jQuery',
+      'Stripe',
+    ],
+  },
+  {
+    contentKey: 'freelancer',
+    keyTechnology: ['PHP', 'MySQL', 'HTML', 'CSS', 'JavaScript', 'jQuery'],
+  },
+] as const;
